@@ -5,6 +5,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import { routerMiddleware } from 'connected-react-router';
 import createSagaMiddleware from 'redux-saga';
+import persistState from 'redux-localstorage';
+
 import createReducer from './reducers';
 
 export default function configureStore(initialState = {}, history) {
@@ -39,7 +41,7 @@ export default function configureStore(initialState = {}, history) {
   const store = createStore(
     createReducer(),
     initialState,
-    composeEnhancers(...enhancers),
+    composeEnhancers(...enhancers, persistState()),
   );
 
   // Extensions
