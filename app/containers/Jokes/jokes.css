@@ -1,0 +1,7 @@
+button .spinner {
+    position: absolute;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+}
